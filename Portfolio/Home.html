@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
+    <title>Portfolio</title>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        body {
+            background-image: url(wallpaper.jpg);
+            background-size: 100%;
+        }
+
+        header {
+            position: fixed;
+            background-color: white;
+            border: 1px white;
+            height: 90px;
+            width: 1500px;
+            box-shadow: 5px 10px 18px #3d52a0;
+        }
+        header div {
+            position: fixed;
+            color: #3d52a0;
+            display: inline-block;
+            font-size: 50px;
+            font-family: Brush Script MT;
+            text-shadow: 1px 1px 3px #3d52a0;
+            float: left;
+            margin-left: 40px;
+            margin-top: 10px;
+        }
+   
+        nav {
+            background: white;
+            width: 458px;
+            float: right;
+            display: flex;
+            position: relative;
+            margin-top: 20px;
+            margin-right: 40px;
+            justify-content: space-between;
+            padding: 5px;
+            border-radius: 22px;
+            box-shadow: 1px 1px 5px #3d52a0;
+        }
+
+            nav > a {
+                color: #3d52a0;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 22px;
+            }
+
+                nav > a:hover {
+                    transition: 0.25s;
+                    background: #3d52a0;
+                    color: #ede8f5;
+                }
+
+        .container {
+            padding-top: 200px;
+        }
+
+        .image img {
+            height: 350px;
+            width: 280px;
+            border: 2px white;
+            box-shadow: 2px 2px 10px #3d52a0;
+            border-radius: 50%;
+            margin-left: 200px;
+        }
+
+        .text {
+            color: #3d52a0;
+            padding-left: 125px;
+        }
+
+        .btn {
+            -webkit-box-reflect: below 1px linear-gradient(transparent, #7091e6);
+            box-shadow: 0 0 5px #3d52a0, 0 0 5px #3d52a0, 0 0 5px #3d52a0, 0 0 5px #3d52a0;
+            background-color: #3d52a0;
+            width: 150px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid #3d52a0;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn:hover, .btn a:hover {
+            color: #3d52a0;
+            background-color: #ede8f5;
+        }
+
+        .logo {
+            padding-top: 50px;
+        }
+
+        .logo img {
+            height: 30px;
+            width: 30px;
+            padding: 5px;
+            margin: 0 5px;
+            border: 2px #adbbda;
+            border-style: outset;
+            border-radius: 50%;
+        }
+
+        .logo img:hover {
+            opacity: 0.5;
+        }
+
+        #About {
+            margin-top: 430px;
+        }
+
+        .photo {
+            text-align: center;
+        }
+
+        #About img {
+            display: center;
+            height: 200px;
+            width: 200px;
+            border: 2px white;
+            border-radius: 50%;
+        }
+        
+        #About h1 {
+            font-size: 50px;
+            color: #3d52a0;
+            text-align: center;
+        }
+
+        #About p {
+            color: #3d52a0;
+            font-size: 23px;
+            font-weight: 540;
+            padding: 50px 280px;
+            text-align: justify;
+        }
+
+        #Services {
+            margin-top: 40px; 
+        }
+
+        #Services h1 {
+            font-size: 50px;
+            color: #3d52a0;
+            text-align: center;
+        }
+
+        .content {
+            background-color: #ede8f5;
+            border: 1px solid #3d52a0;
+            border-radius: 20px;
+            box-shadow: 1px 1px 4px #3d52a0;
+            margin: 10px;
+            padding: 10px;
+            width: 30%;
+            float: left;
+        }
+
+        .content img {
+            height: 30px;
+            width: 30px;
+        }
+
+        #Skills {
+            margin-top: 400px;
+        }
+
+        #Skills h1 {
+            font-size: 50px;
+            color: #3d52a0;
+            text-align: center;
+        }
+
+        .technical p {
+            font-size: 15px;
+            color: #3d52a0;
+        }
+
+        .progress-bar {
+            background-color: white;
+            border: 1px solid #3d52a0;
+            width: 40%;
+            border-radius: 15px;
+            display: grid;
+        }
+
+        .html {
+            width: 80%;
+            background-color: #3d52a0;
+            color: white;
+            text-align: right;
+            font-size: 10px;
+            border-radius: 15px;
+        }
+
+        .css {
+            width: 65%;
+            background-color: #3d52a0;
+            color: white;
+            text-align: right;
+            font-size: 10px;
+            border-radius: 15px;
+        }
+
+        .js {
+            width: 55%;
+            background-color: #3d52a0;
+            color: white;
+            text-align: right;
+            font-size: 10px;
+            border-radius: 15px;
+        }
+
+        .sql {
+            width: 70%;
+            background-color: #3d52a0;
+            color: white;
+            text-align: right;
+            font-size: 10px;
+            border-radius: 15px;
+        }
+
+        .professional p {
+            font-size: 15px;
+            color: #3d52a0;
+        }
+
+        .team-work {
+            width: 80%;
+            background-color: #3d52a0;
+            color: white;
+            text-align: right;
+            font-size: 10px;
+            border-radius: 15px;
+        }
+
+        .communication {
+            width: 75%;
+            background-color: #3d52a0;
+            color: white;
+            text-align: right;
+            font-size: 10px;
+            border-radius: 15px;
+        }
+
+        #Projects {
+            margin-top: 60px;
+        }
+
+        #Projects h1 {
+            font-size: 50px;
+            color: #3d52a0;
+            text-align: center;
+        }
+
+        .web-form {
+            width: 80%;
+            height: 30%;
+            color: white;
+            margin: 20px;
+            padding: 15px 30px;
+            background-color: #404040;
+            border: 1px black;
+            border-radius: 20px;
+        }
+
+        .web-form a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .web-form a:hover {
+            text-decoration: underline;
+        }
+
+        .college-management-system {
+            width: 80%;
+            height: 30%;
+            color: white;
+            margin: 20px;
+            padding: 15px 30px;
+            background-color: #404040;
+            border: 1px black;
+            border-radius: 20px;
+        }
+
+        .college-management-system a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .college-management-system a:hover {
+            text-decoration: underline;
+        }
+
+        #Contact h1 {
+            font-size: 50px;
+            color: #3d52a0;
+            text-align: center;
+        }
+
+        #Contact p {
+            text-align: center;
+            font-size: 30px;
+            color: #3d52a0;
+            font-family: "sofia", sans-serif;
+        }
+
+        #Button {
+            text-align: center;
+            width: 150px;
+            height: 30px;
+            background-color: #3d52a0;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .chat {
+            font-size: 40px;
+            color: #3d52a0;
+            text-align: center;
+        }
+
+        footer {
+            color: #3d52a0;
+            margin-top: 150px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+        Vaibhavi Kukkar
+    </div>
+        <nav style="position:fixed;margin-left:750px;">
+        <a href="Home.html">Home</a>
+        <a href="#ABOUT">About</a>
+        <a href="#SERVICES">Services</a>
+        <a href="#SKILLS">Skills</a>
+        <a href="#PROJECTS">Project</a>
+        <a href="#CONTACT">Contact</a>
+    </nav>
+</header>
+<div class="container">
+    <div class="text" style="float:left;">
+        <h1>Hey I'm Vaibhavi</h1>
+        <h3>And I'm a <span class="font"></span></h3>
+        <p><b>I am a web developer with an an amazing ability to develop websites</b><br /><b> that are both functional and aesthetically pleasing... </b></p>
+        <div class="btn">
+                <a target="_blank" href="VAIBHAVI   KUKKAR.pdf">My Resume</a>
+        </div>
+        <div class=" logo">
+            <a href="https://wa.link/g8adqe"><img src="whatsapp.png" alt="whatsapp logo" /></a>
+            <a href="https://www.linkedin.com/in/vaibhavi-kukkar-53402122b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img src="linkdin.png" alt="linkdein logo" /></a>
+            <a href="https://www.instagram.com/_vaibhu12_?igsh=MTIxdDRmcTI4ajloMA=="><img src="instagram.png" alt="instagram logo" /></a>
+        </div>
+    </div>
+ <div class="image" style="float:left;">
+     <img src="Vaibhu.jpg" alt="sticker" align="right"/>
+ </div>
+ </div>
+<script>
+    var typed = new Typed(".font", {
+        strings: ["Student of Computer Engineer", "coder", "Web Developer"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 80,
+        backDelay: 1500
+    });
+</script>
+
+<div id="About">
+    <section>
+        <h1 id="ABOUT"><br /><br />About Me</h1>
+        <div class="photo">
+            <img src="girl.png" alt="girl" />
+        </div>
+        <p>
+            &nbsp; &nbsp; &nbsp; My Name is Vaibhavi Kukkar, and my portfolio is a representation of all about I've learned and accomplished as a computer engineering student.
+            This portfolio website show how my critical thinking skills have evolved over the course of the program and guidance of some people.<br />
+            &nbsp; &nbsp; &nbsp; My personal philosophy when it comes to education and learning is closely related to the several theories of motivation.
+            I believe that whatever happened around us is responsible for our mental growth, that's why we need to create an ideal environment for education, safty ,well-understanding and even fun.
+            By keeping the things positive, I believe that we will end up learning new things and and getting more out of each and every lesson.<br />
+            &nbsp; &nbsp; &nbsp; I have special interest in the designing websites and an looking for opportunities to work in coding.
+        </p>
+    </section>
+</div>
+
+<div id="Services">
+    <section>
+        <h1 id="SERVICES"><br /><br />My Services</h1>
+            <div class="content">
+                <div class="flip-card-front">
+                    <img src="web design.png" alt="web design logo" />
+                    <h4>Web Design</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.
+                    </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>
+                        Website design services at the most basic level are to promote a business or a brand. A website is the reflection of your business and conveys your brand image in front of your target audience.
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="flip-card-front">
+                    <img src="UIUX.png" alt="UI/UX design logo" />
+                    <h4>UI/UX Design</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.
+                    </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>
+                        DataArt Design Studio provides top-notch UI and UX design services to bring peace to your application. We will help you develop new or improve existing UI/UX design.
+                    </p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="flip-card-front">
+                    <img src="App Designer.png" alt="App design logo" />
+                    <h4>App Design</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nulla nibh, tincidunt sit amet sapien quis.
+                    </p>
+                </div>
+                <div class="flip-card-back">
+                    <p>
+                        Mobile app design services involve creating user-friendly and engaging interfaces for apps. These services enhance user engagement, create a strong brand identity, maximize app functionality, and increase revenue.
+                    </p>
+                </div>
+            </div>
+    </section>
+</div>
+
+<div id="Skills">
+    <h1 id="SKILLS"><br /><br />My Skills</h1>
+    <p style="text-align: center; font-size: 20px; color: #8697c4;">Technical & Professional Skills</p>
+    <div class="technical">
+        <p>HTML</p>
+        <div class="progress-bar">
+            <div class="html">80%</div>
+        </div>
+
+        <p>CSS</p>
+        <div class="progress-bar">
+            <div class="css">65%</div>
+        </div>
+
+        <p>JS</p>
+        <div class="progress-bar">
+            <div class="js">55%</div>
+        </div>
+
+        <p>SQL</p>
+        <div class="progress-bar">
+            <div class="sql">70%</div>
+        </div>
+    </div>
+
+    <div class="professional">
+        <p style="float: right;margin-top: -225px;margin-right: 430px;">Team Work</p>
+        <div class="progress-bar" style="float: right;margin-top: -190px;">
+            <div class="team-work">80%</div>
+        </div>
+
+        <p style="float: right;margin-top: -155px;margin-right: 410px;">Communication</p>
+        <div class="progress-bar" style="float: right;margin-top: -120px;">
+            <div class="communication">75%</div>
+        </div>
+    </div>
+</div>
+<div id="Projects">
+    <h1 id="PROJECTS"><br /><br />My Projects</h1>
+    <div class="web-form">
+        <div>
+            Github
+            <hr />
+                <a href="https://github.com/vaibhavikukkar/web-form">
+                https://github.com/vaibhavikukkar/web-form
+            </a>
+        </div>
+    </div>
+    <div class="college-management-system">
+        <div>
+            Github
+            <hr />
+             <a href="https://github.com/vaibhavikukkar/College-Management-system">
+                https://github.com/vaibhavikukkar/College-Management-system
+             </a> 
+        </div>
+    </div>
+</div>
+<div id="Contact">
+    <h1 id="CONTACT"><br /><br />Contact</h1>
+    <p>Let's create something together...</p>
+    <div class="chat">
+        Let's chat
+        <div>
+            <a href="contact me.aspx"><input id="Button" type="button" value="Send me Email" /></a>
+        </div>
+    </div>
+</div>
+<footer>
+    <div>
+        <hr style="background-color: #7091e6; height: 2px; width: 300px; "/>
+        Copyright © All Rights Reserved
+    </div>
+</footer>
+</body>
+</html>

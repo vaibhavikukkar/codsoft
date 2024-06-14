@@ -1,0 +1,44 @@
+﻿body {
+    background-color: white;
+}
+
+header div {
+    position: fixed;
+    color: #3d52a0;
+    display: inline-block;
+    font-size: 50px;
+    font-family: Brush Script MT;
+    text-shadow: 1px 1px 3px #3d52a0;
+    float: left;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+nav {
+    position: fixed;
+    background: white;
+    width: 458px;
+    float: right;
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+    margin-right: 40px;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 22px;
+    box-shadow: 2px 2px 20px #3d52a0;
+}
+
+nav > a {
+    color: #3d52a0;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 22px;
+}
+
+nav > a:hover {
+    transition: 0.25s;
+    background: #3d52a0;
+    color: #ede8f5;
+}
+
