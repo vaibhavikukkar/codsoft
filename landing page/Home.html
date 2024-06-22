@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premium Paithani</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        h3, p {
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .main-wrap {
+            width: 100%;
+            display: flex;
+        }
+
+        .main-head {
+            width: 70px;
+            height: 100vh;
+            background: #062905;
+            overflow: hidden;
+            transition: width .3s ease-in-out;
+            position: fixed;
+            z-index:1;
+        }
+
+            .main-head.active {
+                width: 20%;
+            }
+
+        .main-nav {
+            width: 100%;
+        }
+
+        .navbar {
+            width: 100%;
+        }
+
+        .title {
+            padding: 15px 12px;
+            float: left;
+        }
+
+        .title img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            float: left;
+            margin-top: 10px;
+        }
+
+            .title h3 {
+                padding-top: 8px;
+                font-size: 18px;
+                float: left;
+                font-weight: 500;
+                color: #fff;
+            }
+
+            .title .title-text {
+                padding: 15px 40px;
+                position: absolute;
+                left: 29px;
+                opacity: 1;
+                transition: opacity .2s ease;
+            }
+
+        .nav-list {
+            padding: 100px 0px;
+        }
+ 
+        .nav-list-item {
+            color: #fff;
+            padding: 15px 25px;
+            list-style: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background .2s ease-in-out;
+        }
+
+        .nav-list-item:hover {
+            background: #062905;
+            border: 1px black;
+            border-style: inset;
+            opacity: 0.6;
+        }
+
+        .nav-link {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            position: relative;
+        }
+
+            .nav-link i {
+                font-size: 20px;
+            }
+
+            .nav-link .link-text {
+                position: absolute;
+                top: 3px;
+                left: 55px;
+                opacity: 0.7;
+                transition: opacity .2s ease-in-out;
+            }
+
+        .main-head.active .link-text {
+            opacity: 1;
+        }
+
+        .showcase {
+            width: calc(100% - 80px);
+            margin-left: 80px;
+            height: 80vh;
+            background: url("3433814.jpg");
+            opacity: 0.8;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            transition: width .3s ease-in-out, margin-left .3s ease-in-out;
+        }
+
+            .showcase.active {
+                width: calc(100% - 20%);
+                margin-left: 20%;
+            }
+
+        .head {
+            padding: 13px 2px;
+            position: fixed;
+        }
+
+        .toggler {
+            background: transparent;
+            border: none;
+            color: black;
+            padding: 13px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+
+            .toggler:hover {
+                background: #ececec;
+            }
+
+            .toggler i {
+                font-size: 20px;
+            }
+
+        .content {
+            padding: 60px 250px;
+            text-align: center;
+        }
+
+        .content img {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            color: #062905;
+            font-weight: 1000;
+        }
+
+        .content p {
+            font-size: 25px;
+            font-family: "Lucida Handwriting",cursive;
+        }
+
+        .container {
+            float: right;
+        }
+
+        .container img {
+            margin: 170px 50px 0 0;
+            height: 250px;
+            width: 400px;
+            float: right;
+            border-radius: 15px;
+        }
+
+        .container h1 {
+            text-align: center;
+            font-size: 40px;
+            margin: 170px 600px 0 50px;
+        }
+
+        .container p {
+            text-align: center;
+            font-size: 24px;
+            margin: 25px 600px 0 50px;
+        }
+
+        .types {
+            display: flex;
+            flex-wrap: wrap;
+            float: left;
+            margin-left: 50px;
+        }
+
+         .heading{
+            font-family: 'Times New Roman';
+            font-size: 35px;
+            font-weight: 700;
+            color: #062905;
+            margin-top: 500px;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .Paithani img {
+            height: 250px;
+            width: 300px;
+            margin: 50px 30px 0 30px;
+            border-radius: 15px;
+        }
+
+        .showcase.active .Paithani img {
+            margin: 20px 80px 0 80px;
+        }
+
+        .text {
+            font-family: 'Times New Roman';
+            font-weight: 300;
+            margin: 0 50px;
+            font-size: 20px;
+            font-weight:bold;
+        }
+
+        .showcase.active .text {
+            margin: 0 100px;
+        }
+
+        .slide {
+            margin-top: 2100px;
+            margin-left: -20px;
+            z-index: -1;
+            background: #80b5abac;
+            position: relative;
+            text-align: center;
+            padding: 40px 60px;
+            border: 2px outset #80b5abac;
+        }
+
+        .slide h1 {
+            font-size: 25px;
+            padding: 20px 0;
+        }
+
+        .slide p {
+            font-size: 23px;
+            padding: 10px 50px 120px 50px;
+            font-family: 'Times New Roman';
+        }
+
+        .showcase.active .slide {
+            margin-top: 2800px;
+        }
+
+        .inslide {
+            background-color: #76a06a;
+            margin: -100px 220px 0 220px;
+            width: 60%;
+            border: 5px outset #76a06a;
+
+        }
+
+        .inslide h3 {
+            text-align: center;
+            font-size: 25px;
+            padding: 20px 0;
+            font-family: 'Times New Roman';
+        }
+
+        .inslide p {
+            text-align: center;
+            font-size: 23px;
+            padding: 10px 50px 60px 50px;
+            font-family: 'Times New Roman';
+        }
+
+        .handloom {
+            margin-top: 70px;
+        }
+
+        .handloom h1 {
+            font-family: 'Times New Roman';
+            font-size: 40px;
+            font-weight: 700;
+            color: #062905;
+            text-align: center;
+        }
+
+        .handloom img{
+            width: 500px;
+            height: 300px;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+
+        .handloom p {
+            font-family: 'Times New Roman';
+            padding: 50px 120px 50px 120px;
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        .info {
+            background-color: #e6e6e6;
+            margin-left: -20px;
+            padding-left: 50px;
+            padding-top: 5px;
+        }
+
+        .contact {
+            margin-top: 100px;
+        }
+        
+        .no {
+            margin-top: 30px;
+        }
+
+        .insta {
+            margin-top: 30px;
+        }
+
+        .store {
+            margin-top: 60px;
+        }
+
+        .footer {
+            margin-top: 120px;
+            text-align: center;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-wrap">
+        <header class="main-head">
+            <div class="main-nav">
+                <nav class="navbar">
+                    <div class="navbar-nav">
+                        <div class="title">
+                            <img src="pp.jpg" alt="pp" />
+                            <h3><span class="title-text">Premium Paithani</span></h3>
+                        </div>
+                        <ul class="nav-list">
+                            <li class="nav-list-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-home"></i>
+                                    <span class="link-text">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span class="link-text">About</span>
+                                </a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-cogs"></i>
+                                    <span class="link-text">Services</span>
+                                </a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-th"></i>
+                                    <span class="link-text">Collections</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <section class="showcase">
+            <div class="head">
+                <button class="toggler">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div class="content">
+                <div class="content-text">
+                    <img src="pp.jpg" alt="pp" />
+                    <h1>Premium Paithani</h1><br />
+                    <p>A saree is not just an attire, it's an emotion.</p>
+                </div>
+            </div>
+            <div class="container">
+                <img src="madhuri.jpg" alt="madhuri dixit" />
+                <h1>Yeola Paithani</h1>
+                <p>Explore the essence of India's diverse drapes with our Women's Collection, featuring Yeola Handloom sarees, each piece celebrates tradition and empowerment. Embrace the spirit of heritage."</p>
+            </div>
+
+            <div class="heading">
+                <h1>Types of Sarees</h1>
+            </div>
+            <div class="types">
+                <div class="Paithani">
+                    <img src="all over brocade.jpg" alt="all over brocade" />
+                    <p class="text">All Over Brocade</p>
+                </div>
+                <div class="Paithani">
+                    <img src="Ercal.jpg" alt="Ercal" />
+                    <p class="text">Ercal Pure Silk Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="half all over brocade.jpg" alt="half all over brocade" />
+                    <p class="text">Half All Over Dandiya Brocade</p>
+                </div>
+                <div class="Paithani">
+                    <img src="kadiyal.jpg" alt="kadiyal" />
+                    <p class="text">Kadiyal Silk Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="kalanjali 2.jpg" alt="kalanjali" />
+                    <p class="text">Kalanjali Pure Silk Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="kalanjali maharani.jpg" alt="kalanjali maharni" />
+                    <p class="text">Kalanjali Maharani Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="Kanchivaram.jpg" alt="kanchivaram" />
+                    <p class="text">Kanchivaram Pure Silk Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="katan banarasi silk saree.jpg" alt="katan silk" />
+                    <p class="text">Katan Banarasi Silk Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="lotus brocade.jpg" alt="Lotus Brocade" />
+                    <p class="text">Lotus Pure Silk Brocade</p>
+                </div>
+                <div class="Paithani">
+                    <img src="maharani paithani.jpg" alt="Maharani paithani" />
+                    <p class="text">Maharani pure Silk Paithani</p>
+                </div>
+                <div class="Paithani">
+                    <img src="peacock Brocade.jpg" alt="Peacock Brocade" />
+                    <p class="text">Peacock Pure Silk Brocade</p>
+                </div>
+                <div class="Paithani">
+                    <img src="peacock parrot brocade.jpg" alt="peacock parrot brocade" />
+                    <p class="text">Peacock Parrot Brocade</p>
+                </div>
+                <div class="Paithani">
+                    <img src="pure silk saree with bandhani.jpg" alt="Bandhani" />
+                    <p class="text">Bandhani Pure Silk Saree</p>
+                </div>
+                <div class="Paithani">
+                    <img src="rainbow paithani.jpg" alt="rainbow" />
+                    <p class="text">Rainbow Yeola Paithani</p>
+                </div>
+                <div class="Paithani">
+                    <img src="semi paithani.jpg" alt="Semi Paithani" />
+                    <p class="text">Semi Silk Paithani</p>
+                </div>
+                <div class="Paithani">
+                    <img src="sico.jpg" alt="sico" />
+                    <p class="text">Sico Saree (Silk+Cotton)</p>
+                </div>
+                <div class="Paithani">
+                    <img src="single muniya.jpg" alt="Single Muniya" />
+                    <p class="text">Single Muniya Brocade</p>
+                </div>
+                <div class="Paithani">
+                    <img src="yeola tissue paithani.jpg" alt="Tissue paithani" />
+                    <p class="text">Yeola Tissue Paithani</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <h1>HAND CRAFTED SAREES ONLINE IN INDIA</h1>
+                <p>Premium Paithani has become the one stop destination to buy ready made silk sari online in India. Exquisite and elegant, the saree ,online collection at Premium Paithani is worth checking out.</p>
+            </div>
+            <div class="inslide">
+                <h3>LUXURY SILK SAREE STORE</h3>
+                <p>Here are the sarees that are meant for every sphere of your life. We have elegant pure silk sarees which is the dreams of every woman.</p>
+            </div>
+            
+            <div class="handloom">
+                <h1>Handloom</h1>
+                <center><img src="handloom.jpg" alt="handloom" /></center>
+                <p>
+                    &nbsp &nbsp &nbsp Handloom refers to wooden frames of different types which are used by skilled artisans to weave fabrics usually from natural fibers like Cotton, Silk, Wool, Jute etc.  It is a cottage industry where the entire family is involved in the production of cloth. Right from spinning the yarn, colouring, to weaving on the loom if done by them. Fabric produced from these looms is also referred to as Handloom.
+                    <br />
+                    &nbsp &nbsp &nbsp The tools required for this entire process are made from wood, sometimes bamboo and they do not require any electricity to run them. The entire process of fabric production was totally manual in earlier times. Thus this is the most eco-friendly way of producing clothes.
+                    <br />
+                    &nbsp &nbsp &nbsp The geography of India is replete with distinct local and regional handloom traditions. Showcasing, 'Queen of sarees' & "Mahavastra of Maharashtra", the resplendent handwoven Paithani Sarees from the weaving cluster of Maharashtra.
+                    <br />
+                    &nbsp &nbsp &nbsp Nearly 2,000-year-old craft, a true significance to rich Maharashtra's culture and tradition, Paithani Sarees once produced only for the Royal families and have transcended the era of the Mughals, British, Peshwas, and still stand out aesthetically. A labor-intensive craft, splendiferous Paithani Sarees are hand woven to perfection using the finest of silks and cotton, and the process would take anything between ten days to two years, depending on the intricacy of the designs on the saree border and pallu.
+                    <br />
+                    &nbsp &nbsp &nbsp Regal and elegant, Paithani Saris have traditionally been a part of the wedding trousseau of every Maharashtrian bride. A treasured heirloom, explore Paithani Sarees from our curated collection, a must- have in every sophisticated women's handloom connoisseur's collection. The special feature & the authenticity is that the motifs look identical on either side of the fabric.
+                </p>
+            </div>
+
+            <div class="info">
+                <div class="contact">
+                    <div class="header">
+                        <h1>Few Essential Number</h1>
+                    </div>
+                    <div class="no">
+                        <h4>Official Customer Number</h4>
+                        <p>+919028105022</p>
+                    </div>
+                    <div class="insta">
+                        <h4>Instagram link</h4>
+                        <a href="https://www.instagram.com/premium_paithani?igsh=eDc0dTYzb3k0bHV1">https://www.instagram.com/premium_paithani?igsh=eDc0dTYzb3k0bHV1</a>
+                    </div>
+                </div>
+                <div class="store">
+                    <h1>Our Store</h1>
+                    <p>Store Address: Khatri Lane,Jogawada,near by Baleshwari Temple,Yeola<br />Dist- Nashik<br />Pin Code: 423402</p>
+                </div>
+
+                <div class="footer">
+                    <h4>Copyright © All Rights Reserved</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const mainhead = document.querySelector('.main-head');
+        const showcase = document.querySelector('.showcase');
+        const toggler = document.querySelector('.toggler');
+
+        toggler.addEventListener('click', () => {
+            mainhead.classList.toggle('active');
+            showcase.classList.toggle('active');
+        });
+    </script>
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            showSlides();
+        });
+    </script>
+
+</body>
+</html>
