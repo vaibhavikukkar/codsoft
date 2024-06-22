@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <style>
+
+        .cal-wrap {
+            margin: 100px 500px;
+            border: 10px outset #E9EAEC;
+            background-color: #E9EAEC;
+            height: 400px;
+            width: 300px;
+            border-radius: 15px;
+        }
+
+        .cal-display {
+            border: 5px inset #E9EAEC;
+            background-color: rgba(140, 146, 172, 0.5);
+            border-bottom-style: none;
+            width: 230px;
+            height: 25px;
+            margin: 30px 0 0 5px;
+        }
+
+        textarea:focus input:focus {
+            outline: none;
+        }
+
+        .cal-display-sol {
+            border: 5px inset #E9EAEC;
+            background-color: rgba(140, 146, 172, 0.5);
+            border-top-style: none;
+            width: 230px;
+            height: 25px;
+            margin: 0 0 30px 5px;
+        }
+
+        .cal-table {
+            text-align: center;
+        }
+
+        .cal-table .cal-button {
+            height: 40px;
+            width: 40px;
+            margin: 10px;
+            color: #fff;
+            border: 2px outset #333646;
+            background-color: #333646;       
+        }
+
+        .cal-table .cal-button:hover {
+            background-color: rgba(0 0 0/50%);
+        }
+
+        .cal-table .cal-sol {
+            background-color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="cal-wrap">
+            <input type="text" id="edu" class="cal-display">
+            <input type="text" id="eds" class="cal-display-sol">
+            <table class="cal-table">
+                <tr>
+                    <td><input type="button" value="=" onclick="sol()" class="cal-button cal-sol"></td>
+                    <td><input type="button" value="c" onclick="clr()" class="cal-button  cal-function"></td>
+                    <td><input type="button" value="/" onclick="dis('/')" class="cal-button cal-function"></td>
+                    <td><input type="button" value="%" onclick="dis('%')" class="cal-button cal-function"></td>
+
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="+" onclick="dis('+')" class="cal-button cal-function"></td>
+                    <td><input type="button" value="1" onclick="dis('1')" class="cal-button"></td>
+                    <td><input type="button" value="2" onclick="dis('2')" class="cal-button"></td>
+                    <td><input type="button" value="3" onclick="dis('3')" class="cal-button"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="-" onclick="dis('-')" class="cal-button cal-function"></td>
+                    <td><input type="button" value="4" onclick="dis('4')" class="cal-button"></td>
+                    <td><input type="button" value="5" onclick="dis('5')" class="cal-button"></td>
+                    <td><input type="button" value="6" onclick="dis('6')" class="cal-button"></td>
+                </tr>
+
+                <tr>
+                    <td><input type="button" value="x" onclick="dis('x')" class="cal-button cal-function"></td>
+                    <td><input type="button" value="7" onclick="dis('7')" class="cal-button"></td>
+                    <td><input type="button" value="8" onclick="dis('8')" class="cal-button"></td>
+                    <td><input type="button" value="9" onclick="dis('9')" class="cal-button"></td>
+                </tr>
+
+
+
+            </table>
+
+        </div>
+    </center>
+    <script>function dis(val) {
+            document.getElementById("edu").value += val
+        }
+
+        function sol() {
+            let x = document.getElementById("edu").value
+            let y = eval(x)
+            document.getElementById("eds").value = y
+        }
+
+        function clr() {
+            document.getElementById("edu").value = ""
+            document.getElementById("eds").value = ""
+        }</script>
+
+</body>
+</html>
